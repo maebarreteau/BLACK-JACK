@@ -1,0 +1,56 @@
+
+body {
+    background-image: url("https://static.vecteezy.com/ti/vecteur-libre/p1/4775601-poker-table-vector-illustration-isolated-poker-or-black-jack-table-with-green-carpet-realistic-casino-online-poker-table-element-gambling-room-concept-design-vector-illustration-vectoriel.jpg");
+    background-size: 1300px;
+    background-repeat: no-repeat;
+    background-position: 10% 10%;
+    font-family: "pixelify sans", sans sherif;
+}
+
+.titre {
+    display: flex;
+    justify-content: center;
+    font-size: 75px;   
+    margin: 0;
+    padding: 0;
+    color:#FF0000
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    font-size: 25px
+}
+
+.styled {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(220 0 0 / 100%);
+  background-image: linear-gradient(
+    to top left,
+    rgb(0 0 0 / 20%),
+    rgb(0 0 0 / 20%) 30%,
+    rgb(0 0 0 / 0%)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgb(255 255 255 / 60%),
+    inset -2px -2px 3px rgb(0 0 0 / 60%);
+}
+
+.styled:hover {
+  background-color: rgb(255 0 0 / 100%);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgb(255 255 255 / 60%),
+    inset 2px 2px 3px rgb(0 0 0 / 60%);
+}
