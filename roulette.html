@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="roulette.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="jeton_casino.ico">
+    <title>BLACK JACK</title>
+</head>
+<body>
+
+  <div class="titre">ROULETTE</div>
+  
+ <div class="roulette-wheel"></div>
+</div>
+
+<div class="controls">
+  <button onclick="placeBet('red')">Miser sur Rouge</button>
+  <button onclick="placeBet('black')">Miser sur Noir</button>
+  <button onclick="placeBet('number')">Miser sur un numéro</button>
+</div>
+
+<p>Solde : <span id="balance">1000</span> €</p>
+<p id="result"></p>
+<p id="message"></p>
+
+<script src="roulette.js"></script>
+    
+   
+    
+
+</body>
+</html>

@@ -1,14 +1,8 @@
 const cards = document.querySelectorAll('.memory-card');
+const continueBtn = document.getElementById('continueBtn');
 
-function shuffleCards() {
-  cards.forEach(card => {
-    const randomPos = Math.floor(Math.random() * cards.length);
-    card.style.order = randomPos;
-  });
-}
-
-// On mélange une première fois au chargement
-shuffleCards();
+// Cache le bouton dès le départ
+continueBtn.style.display = 'none';
 
 cards.forEach(card => {
   card.addEventListener('click', () => {
@@ -18,18 +12,24 @@ cards.forEach(card => {
 
     if (card.dataset.card === 'ace') {
       alert('Bravo, vous avez trouvé l\'As !');
-      
+      continueBtn.style.display = 'inline-block'; 
     } else {
-      alert('Désolée, vous êtes mort !');
-
-      setTimeout(() => {
-       
-        cards.forEach(c => c.classList.remove('flip'));
-
+      alert('Désolé, vous êtes mort !');
       
+      setTimeout(() => {
+        cards.forEach(c => c.classList.remove('flip'));
         shuffleCards();
-      }, 1500);
+      }, 1000);
     }
   });
 });
 
+
+function shuffleCards() {
+  cards.forEach(card => {
+    const randomPos = Math.floor(Math.random() * cards.length);
+    card.style.order = randomPos;
+  });
+}
+
+shuffleCards();
