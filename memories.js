@@ -9,8 +9,8 @@ let erreurs = 0;
 let score = 0;
 
 function flipCard() {
-  if (lockBoard) return;        // board verrouillé ? on bloque
-  if (this === firstCard) return; // clic sur la même carte => ignore
+  if (lockBoard) return; 
+  if (this === firstCard) return;
 
   this.classList.add('flip');
 
@@ -21,8 +21,6 @@ function flipCard() {
   }
 
   secondCard = this;
-  lockBoard = true;             // verrouille board, pas de clic supplémentaire
-
   checkForMatch();
 }
 
@@ -37,12 +35,18 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  // Retirer écouteurs
+  lockBoard = true; 
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
 
   score++;
-  document.getElementById('score').textContent = score;
+  const scoreSpan = document.getElementById('score');
+  if (scoreSpan) scoreSpan.textContent = score;
+
+  if (score === 6) {
+    const nextButton = document.getElementById('next-button');
+    if (nextButton) nextButton.style.display = 'block';
+  }
 
   setTimeout(() => {
     firstCard.classList.add('fade-out');
@@ -53,12 +57,14 @@ function disableCards() {
       secondCard.style.visibility = 'hidden';
       resetBoard();
     }, 500);
-  }, 500);
+  }, 300);
 }
 
 function unflipCards() {
+  lockBoard = true; 
   erreurs++;
-  document.getElementById('erreurs').textContent = erreurs;
+  const erreursSpan = document.getElementById('erreurs');
+  if (erreursSpan) erreursSpan.textContent = erreurs;
 
   if (erreurs > 10) {
     alert("Vous avez fait trop d'erreurs, vous êtes mort !");
@@ -75,11 +81,10 @@ function unflipCards() {
 }
 
 function resetBoard() {
-  hasFlippedCard = false;
-  lockBoard = false;
-  firstCard = null;
-  secondCard = null;
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
 }
+
 
 (function shuffle() {
   cards.forEach(card => {
@@ -87,5 +92,6 @@ function resetBoard() {
     card.style.order = randomPos;
   });
 })();
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
