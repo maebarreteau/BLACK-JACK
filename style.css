@@ -1,30 +1,41 @@
 
 body {
-    background-image: url("https://static.vecteezy.com/ti/vecteur-libre/p1/4775601-poker-table-vector-illustration-isolated-poker-or-black-jack-table-with-green-carpet-realistic-casino-online-poker-table-element-gambling-room-concept-design-vector-illustration-vectoriel.jpg");
-    background-size: 1300px;
-    background-repeat: no-repeat;
-    background-position: 10% 10%;
-    font-family: "pixelify sans", sans sherif;
+  margin: 0;
+  background-image: url("https://static.vecteezy.com/ti/vecteur-libre/p1/4775601-poker-table-vector-illustration-isolated-poker-or-black-jack-table-with-green-carpet-realistic-casino-online-poker-table-element-gambling-room-concept-design-vector-illustration-vectoriel.jpg");
+  background-size: 1300px;
+  background-repeat: no-repeat;
+  background-position: 10% 10%;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding-top: 30px; /* pour coller un peu plus en haut */
 }
 
 .titre {
-    display: flex;
-    justify-content: center;
-    font-size: 75px;   
-    margin: 0;
-    padding: 0;
-    color:#FF0000
+  font-size: 75px;
+  color: #FF0000;
+  margin: 0;
+  padding: 0;
 }
 
 p {
-    display: flex;
-    justify-content: center;
-    font-size: 25px
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+  min-height: 50vh;
+  margin-bottom: -30px;        
 }
 
 .styled {
-  display: flex;
-  justify-content: center;
+  display: inline-block;
   border: 0;
   line-height: 2.5;
   padding: 0 20px;
@@ -43,6 +54,9 @@ p {
   box-shadow:
     inset 2px 2px 3px rgb(255 255 255 / 60%),
     inset -2px -2px 3px rgb(0 0 0 / 60%);
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
 .styled:hover {
