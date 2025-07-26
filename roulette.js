@@ -22,6 +22,8 @@ function placeBet(type) {
     }
   }
 
+  balance -= betAmount;
+  updateBalance()
   spinRoulette(type, betAmount, chosenNumber);
 }
 
