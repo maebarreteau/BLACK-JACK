@@ -9,17 +9,20 @@ cards.forEach(card => {
     if (card.classList.contains('flip')) return;
 
     card.classList.add('flip');
-
     if (card.dataset.card === 'ace') {
-      alert('Bravo, vous avez trouvé l\'As !');
-      continueBtn.style.display = 'inline-block'; 
-    } else {
-      alert('Désolé, vous êtes mort !');
-      
       setTimeout(() => {
-        cards.forEach(c => c.classList.remove('flip'));
-        shuffleCards();
-      }, 1000);
+        alert('Bravo, vous avez trouvé l\'As !');
+        continueBtn.style.display = 'inline-block';
+      }, 500);
+    } else {
+      setTimeout(() => {
+        alert('Désolé, vous êtes mort !');
+
+        setTimeout(() => {
+          cards.forEach(c => c.classList.remove('flip'));
+          shuffleCards();
+        }, 1000);
+      }, 500);
     }
   });
 });
